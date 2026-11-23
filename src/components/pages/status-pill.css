@@ -1,0 +1,49 @@
+/* ---------- Status pills ---------- */
+.status-pill {
+  display: inline-block;
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: capitalize;
+  background: var(--surface-muted);
+  color: var(--text-brand);
+  white-space: nowrap;
+}
+
+.status-pill--active,
+.status-pill--present,
+.status-pill--done,
+.status-pill--accepted,
+.status-pill--offer {
+  background: #d7f5e5;
+  color: var(--state-success);
+}
+
+.status-pill--scheduled,
+.status-pill--submitted,
+.status-pill--applied,
+.status-pill--resume\ sent {
+  background: var(--color-sunrise-100);
+  color: var(--text-accent);
+}
+
+.status-pill--interview,
+.status-pill--shortlisted,
+.status-pill--reviewing {
+  background: var(--color-sky-100);
+  color: var(--color-sky-700);
+}
+
+.status-pill--pending,
+.status-pill--late {
+  background: #fdf1d6;
+  color: var(--state-warning);
+}
+
+.status-pill--absent,
+.status-pill--paused,
+.status-pill--draft {
+  background: #fbe4e4;
+  color: var(--state-danger);
+}

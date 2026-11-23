@@ -1,0 +1,33 @@
+.confirm {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.confirm__overlay { position: absolute; inset: 0; background: rgba(14, 46, 63, 0.5); }
+[data-theme='dark'] .confirm__overlay { background: rgba(0, 0, 0, 0.65); }
+
+.confirm__panel {
+  position: relative;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  max-width: 440px;
+  width: 100%;
+}
+
+.confirm__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-brand);
+  margin-bottom: var(--space-3);
+}
+
+.confirm__message { color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-5); }
+.confirm__actions { display: flex; justify-content: flex-end; gap: var(--space-2); }

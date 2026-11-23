@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --horizon-dawn: lch(77.99% 72.41 74.62);
+  --horizon-amber: lch(67.26% 69.02 65.37);
+  --horizon-sky: lch(71.06% 25.85 235.27);
+  --horizon-ocean: lch(31.01% 23.54 248.52);
+  --horizon-deep: lch(17.26% 16.09 244.08);
+  --horizon-mist: lch(96.36% 3.63 232.89);
+  --horizon-cloud: lch(100% 0 0);
+  --horizon-glow: lch(90% 35.89 82.49);
+  --horizon-success: lch(49.58% 38.11 156.22);
+  --horizon-warning: lch(50.09% 64.74 50.26);
+  --horizon-error: lch(36.46% 54.29 31.18);
+  --horizon-border: lch(84.74% 6.94 253.96);
+  --horizon-text: lch(16.03% 10.27 246);
+  --horizon-text-light: lch(38.62% 11.38 242.2);
+  
+  /* Horizon Accent Colours */
+
+  --color-accent-red:      lch(58% 78 28);
+  --color-accent-coral:    lch(66% 62 42);
+  --color-accent-orange:   lch(68% 80 58);
+  --color-accent-amber:    lch(76% 82 82);
+  --color-accent-yellow:   lch(82% 88 98);
+  --color-accent-lime:     lch(74% 72 128);
+  --color-accent-green:    lch(60% 66 148);
+  --color-accent-teal:     lch(58% 44 188);
+  --color-accent-cyan:     lch(62% 48 220);
+  --color-accent-sky:      lch(68% 54 248);
+  --color-accent-blue:     lch(60% 68 270);
+  --color-accent-indigo:   lch(56% 56 292);
+  --color-accent-violet:   lch(62% 62 314);
+  --color-accent-magenta:  lch(60% 72 348);
+
+  /* TYPOGRAPHY — Rule #5: Two fonts only */
+  --font-display: "Atkinson Hyperlegible Next", Georgia, serif;
+  --font-base: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --font-mono: "Atkinson Hyperlegible Mono", monospace;
+
+  /* TYPE SCALE — Rule #3: 1.5x modular scale */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 1.5rem; /* 24px */
+  --text-2xl: 2rem; /* 32px */
+  --text-3xl: 2.75rem; /* 44px */
+  --text-4xl: 3.5rem; /* 56px */
+
+  /* SPACING — Rule #6: 8px grid system */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* RADIUS */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* SHADOWS */
+  --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.06),
+    0 1px 2px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 4px 12px rgba(28, 25, 23, 0.08),
+    0 2px 4px rgba(28, 25, 23, 0.04);
+  --shadow-lg: 0 12px 32px rgba(28, 25, 23, 0.1),
+    0 4px 8px rgba(28, 25, 23, 0.05);
+}
+
+/* ---------- CSS RESET & VARIABLES ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================
+ BASE — Rule #7: Soft background, near-black text
+============================================= */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body, .App {
+  background-color: var(--horizon-mist);
+  color: var(--horizon-text);
+  font-family: var(--font-base);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* =============================================
+ TYPOGRAPHY — Rule #3: Clear hierarchy, Rule #5: Two fonts
+============================================= */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: 400;
+}
+
+h4 {
+  font-family: var(--font-base);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+p {
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+/* Rule #2: Line length control */
+p,
+.prose {
+  max-width: 65ch;
+}
+
+p,
+ul {
+  margin-bottom: var(--space-1);
+}
+
+a {
+  color: var(--color-accent-warm);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--color-accent-warm);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: var(--color-accent);
+}
+
+blockquote {
+  background: var(--color-bg-alt);
+  border-left: 4px solid var(--color-border);
+  padding: 2px var(--space-1);
+  color: var(--color-accent-warm);
+  margin-top: var(--space-2);
+}

@@ -1,0 +1,76 @@
+.calendar__day-list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.calendar__day-heading {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.calendar__event {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--surface-subtle);
+  border-left: 4px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.calendar__event-time { color: var(--text-brand); font-weight: var(--font-weight-semibold); min-width: 60px; }
+
+.calendar__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: var(--space-2); }
+
+.calendar__dow {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  padding: var(--space-2) 0;
+}
+
+.calendar__cell {
+  background: var(--surface-subtle);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  min-height: 88px;
+  padding: var(--space-2);
+  font-size: var(--font-size-xs);
+  transition: border-color var(--motion-fast) var(--motion-ease);
+}
+
+.calendar__cell:hover { border-color: var(--color-sky-500); }
+.calendar__cell--week { min-height: 110px; }
+.calendar__cell--empty { background: transparent; border: none; }
+
+.calendar__date {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-brand);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.calendar__chip {
+  background: var(--color-sky-700);
+  color: var(--color-neutral-0);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.calendar__chip--accent { background: #8a5210; color: var(--color-neutral-0); }
+
+[data-theme='dark'] .calendar__chip { background: #4a8db0; color: #0f1720; font-weight: var(--font-weight-semibold); }
+[data-theme='dark'] .calendar__chip--accent { background: #f9b234; color: #0f1720; font-weight: var(--font-weight-semibold); }
+
+@media (max-width: 640px) {
+  .calendar__cell { min-height: 64px; }
+}

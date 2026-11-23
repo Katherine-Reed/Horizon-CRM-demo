@@ -1,0 +1,105 @@
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+.empty-state {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  padding: var(--space-4) 0;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: capitalize;
+  background: var(--surface-muted);
+  color: var(--text-brand);
+  white-space: nowrap;
+}
+
+.status-pill--active,
+.status-pill--present,
+.status-pill--done,
+.status-pill--accepted,
+.status-pill--offer,
+.status-pill--completed,
+.status-pill--healthy { background: #d7f5e5; color: #16603f; }
+
+.status-pill--scheduled,
+.status-pill--submitted,
+.status-pill--applied,
+.status-pill--resume-sent,
+.status-pill--in-use { background: var(--color-sunrise-100); color: #7a4410; }
+
+.status-pill--interview,
+.status-pill--shortlisted,
+.status-pill--reviewing,
+.status-pill--available,
+.status-pill--in-progress { background: var(--color-sky-100); color: #245a75; }
+
+.status-pill--pending,
+.status-pill--late,
+.status-pill--attention { background: #fdf1d6; color: #7a3a12; }
+
+.status-pill--absent,
+.status-pill--paused,
+.status-pill--draft,
+.status-pill--declined { background: #fbe4e4; color: #7a2222; }
+
+.status-pill--low { background: var(--color-meadow-100); color: #1e5540; }
+.status-pill--medium { background: var(--color-sunrise-100); color: #7a4410; }
+.status-pill--high { background: #fde2cc; color: #7a3410; }
+.status-pill--urgent { background: #fbe4e4; color: #7a2222; }
+.status-pill--open { background: var(--color-meadow-100); color: #1e5540; }
+.status-pill--monitoring { background: var(--color-sunrise-100); color: #7a4410; }
+.status-pill--closed { background: var(--color-neutral-200); color: #33404a; }
+
+[data-theme='dark'] .status-pill { background: var(--surface-muted); color: var(--text-primary); }
+
+[data-theme='dark'] .status-pill--active,
+[data-theme='dark'] .status-pill--present,
+[data-theme='dark'] .status-pill--done,
+[data-theme='dark'] .status-pill--accepted,
+[data-theme='dark'] .status-pill--offer,
+[data-theme='dark'] .status-pill--completed,
+[data-theme='dark'] .status-pill--healthy { background: rgba(110, 213, 161, 0.15); color: #6ed5a1; }
+
+[data-theme='dark'] .status-pill--scheduled,
+[data-theme='dark'] .status-pill--submitted,
+[data-theme='dark'] .status-pill--applied,
+[data-theme='dark'] .status-pill--resume-sent,
+[data-theme='dark'] .status-pill--in-use { background: rgba(249, 178, 52, 0.15); color: #fdde9e; }
+
+[data-theme='dark'] .status-pill--interview,
+[data-theme='dark'] .status-pill--shortlisted,
+[data-theme='dark'] .status-pill--reviewing,
+[data-theme='dark'] .status-pill--available,
+[data-theme='dark'] .status-pill--in-progress { background: rgba(142, 197, 223, 0.15); color: #8ec5df; }
+
+[data-theme='dark'] .status-pill--pending,
+[data-theme='dark'] .status-pill--late,
+[data-theme='dark'] .status-pill--attention { background: rgba(253, 190, 110, 0.15); color: #fdbe6e; }
+
+[data-theme='dark'] .status-pill--absent,
+[data-theme='dark'] .status-pill--paused,
+[data-theme='dark'] .status-pill--draft,
+[data-theme='dark'] .status-pill--declined { background: rgba(240, 140, 140, 0.15); color: #f08c8c; }
+
+[data-theme='dark'] .status-pill--low,
+[data-theme='dark'] .status-pill--open { background: rgba(110, 213, 161, 0.15); color: #a4e9c5; }
+
+[data-theme='dark'] .status-pill--medium,
+[data-theme='dark'] .status-pill--monitoring { background: rgba(249, 178, 52, 0.15); color: #fdde9e; }
+
+[data-theme='dark'] .status-pill--high { background: rgba(253, 190, 110, 0.15); color: #fdbe6e; }
+[data-theme='dark'] .status-pill--urgent { background: rgba(240, 140, 140, 0.15); color: #f08c8c; }
+[data-theme='dark'] .status-pill--closed { background: var(--surface-muted); color: var(--text-secondary); }

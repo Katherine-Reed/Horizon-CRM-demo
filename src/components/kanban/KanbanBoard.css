@@ -1,0 +1,66 @@
+.kanban {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.kanban__column {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: outline var(--motion-fast) var(--motion-ease);
+}
+
+.kanban__column--drop { outline: 2px dashed var(--border-accent); outline-offset: -4px; }
+
+.kanban__column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-brand);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--border-accent);
+}
+
+.kanban__count {
+  background: var(--surface-card);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+}
+
+.kanban__card {
+  background: var(--surface-card);
+  border-left: 3px solid var(--color-sky-500);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-xs);
+  font-size: var(--font-size-sm);
+  cursor: grab;
+  transition:
+    box-shadow var(--motion-fast) var(--motion-ease),
+    transform var(--motion-fast) var(--motion-ease),
+    background var(--motion-base) var(--motion-ease);
+}
+
+.kanban__card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.kanban__card--dragging { opacity: 0.4; }
+
+[data-theme='dark'] .kanban__card { border-left-color: #6cb4d6; }
+[data-theme='dark'] .kanban__card:hover { box-shadow: 0 0 0 1px var(--border-accent), var(--shadow-md); }
+
+.kanban__card-name { font-weight: var(--font-weight-semibold); color: var(--text-primary); display: block; }
+.kanban__card-role { color: var(--text-muted); font-size: var(--font-size-xs); }
+
+@media (max-width: 960px) { .kanban { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .kanban { grid-template-columns: 1fr; } }

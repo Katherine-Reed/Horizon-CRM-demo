@@ -1,0 +1,212 @@
+.adviser-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-bottom: var(--space-8);
+}
+
+/* 
+  Override the global .dashboard class padding for this specific view 
+  to allow the header block to span full width.
+*/
+.dashboard:has(.adviser-dashboard) {
+  padding: var(--space-4);
+}
+
+@media (max-width: 960px) {
+  .dashboard:has(.adviser-dashboard) {
+    padding: var(--space-2);
+  }
+}
+
+/* 
+  Custom header block matching the dark green aesthetic in the image 
+  while using semantic theme tokens.
+*/
+.adviser-header {
+  background: var(--text-secondary); /* Deep green/slate */
+  color: var(--surface-card);
+  padding: var(--space-6) var(--space-8);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Specifically target light mode for the deep green look */
+[data-theme='light'] .adviser-header,
+:root:not([data-theme='dark']) .adviser-header {
+  background: #5A7166; /* Precise hex for the deep sage green in the screenshot */
+}
+
+.adviser-header__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-1);
+  color: #ffffff;
+}
+
+.adviser-header__subtitle {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Performance Summary Grid */
+.performance-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.summary-card {
+  background: #EAF2F8; /* Light blue tint from the screenshot */
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--action-primary-bg); /* Deep blue/ocean accent */
+  padding: var(--space-4) var(--space-5);
+}
+
+[data-theme='dark'] .summary-card {
+  background: var(--surface-muted);
+  border-left-color: var(--action-primary-bg);
+}
+
+.summary-card__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.summary-card__value {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Hide standard Card header borders for chart and table if needed */
+.adviser-dashboard .card__header {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: var(--space-5);
+}
+
+.adviser-dashboard .card__title {
+  color: #4A5D51; /* Sage text for card titles */
+}
+[data-theme='dark'] .adviser-dashboard .card__title {
+  color: var(--text-brand);
+}
+
+/* Custom Bar Chart */
+.custom-bar-chart {
+  position: relative;
+  height: 320px;
+  margin-top: var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.custom-bar-chart__axis {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-default);
+}
+
+.custom-bar-chart__grid {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 100%;
+  padding-bottom: 0; /* Flush with axis */
+  padding-left: var(--space-4);
+}
+
+.custom-bar-chart__column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.custom-bar-chart__bar-wrapper {
+  width: 70%;
+  max-width: 180px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.custom-bar-chart__bar {
+  width: 100%;
+  background: linear-gradient(180deg, #3E81B8 0%, #245D8C 100%); /* Blue gradient matching image */
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  position: relative;
+  transition: height var(--motion-base) var(--motion-ease);
+}
+
+[data-theme='dark'] .custom-bar-chart__bar {
+  background: linear-gradient(180deg, var(--color-sky-500) 0%, var(--color-ocean-500) 100%);
+}
+
+.custom-bar-chart__value {
+  position: absolute;
+  top: -24px;
+  width: 100%;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-sky-700);
+}
+
+[data-theme='dark'] .custom-bar-chart__value {
+  color: var(--text-primary);
+}
+
+/* Custom Status Tags matching image */
+.custom-status {
+  display: inline-block;
+  padding: 4px var(--space-3);
+  border-radius: 4px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+/* We can use the theme's warning/success colors but mix with light backgrounds */
+.custom-status--warning {
+  background-color: #FCE8B2;
+  color: #8A6D3B;
+}
+
+.custom-status--success {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+[data-theme='dark'] .custom-status--warning {
+  background-color: rgba(253, 190, 110, 0.15);
+  color: #fdbe6e;
+}
+
+[data-theme='dark'] .custom-status--success {
+  background-color: rgba(110, 213, 161, 0.15);
+  color: #6ed5a1;
+}
+
+/* Table header override for deep blue */
+.adviser-dashboard .data-table thead {
+  background: #164C72; /* Deep blue matching image */
+}
+
+.adviser-dashboard .data-table th {
+  color: #ffffff;
+  border-bottom: none;
+}
+
+[data-theme='dark'] .adviser-dashboard .data-table thead {
+  background: var(--surface-muted);
+}
+
+[data-theme='dark'] .adviser-dashboard .data-table th {
+  color: var(--text-brand);
+}

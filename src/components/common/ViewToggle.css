@@ -1,0 +1,25 @@
+.view-toggle {
+  display: inline-flex;
+  background: var(--surface-muted);
+  padding: var(--space-1);
+  border-radius: var(--radius-pill);
+}
+
+.view-toggle__btn {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  transition: background var(--motion-fast) var(--motion-ease);
+}
+
+.view-toggle__btn:hover { background: rgba(255, 255, 255, 0.6); }
+[data-theme='dark'] .view-toggle__btn:hover { background: rgba(255, 255, 255, 0.08); }
+
+.view-toggle__btn--active {
+  background: var(--surface-card);
+  color: var(--text-brand);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-xs);
+}

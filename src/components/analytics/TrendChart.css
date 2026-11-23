@@ -1,0 +1,28 @@
+.trend-chart {
+  background: var(--surface-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid var(--border-subtle);
+}
+
+.trend-chart__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.trend-chart__svg { width: 100%; height: 80px; display: block; }
+
+.trend-chart__bar { fill: var(--color-sky-500); transition: fill var(--motion-fast) var(--motion-ease); }
+
+.trend-chart__svg--accent .trend-chart__bar { fill: var(--surface-accent); }
+.trend-chart__svg--meadow .trend-chart__bar { fill: var(--wellbeing-accent); }
+.trend-chart:hover .trend-chart__bar { fill: var(--color-ocean-500); }
+
+[data-theme='dark'] .trend-chart__bar { fill: #6cb4d6; }
+[data-theme='dark'] .trend-chart__svg--accent .trend-chart__bar { fill: #f9b234; }
+[data-theme='dark'] .trend-chart__svg--meadow .trend-chart__bar { fill: #6ed5a1; }
+[data-theme='dark'] .trend-chart:hover .trend-chart__bar { fill: #8ec5df; }

@@ -1,0 +1,76 @@
+.header {
+  height: var(--header-height);
+  background: var(--surface-card);
+  border-bottom: 3px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  box-shadow: var(--shadow-xs);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  transition: background var(--motion-base) var(--motion-ease);
+}
+
+.header__brand { display: flex; align-items: center; gap: var(--space-3); }
+
+.header__brand-icon { font-size: 1.6rem; color: var(--surface-accent); }
+
+.header__brand-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-brand);
+  letter-spacing: -0.5px;
+}
+
+.header__brand-tag {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  background: var(--surface-muted);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+}
+
+[data-theme='dark'] .header__brand-tag { color: var(--text-primary); }
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--surface-muted);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-2);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+}
+
+.user-badge__icon { color: var(--text-brand); }
+
+.user-badge__email { font-size: var(--font-size-sm); color: var(--text-secondary); }
+
+.user-badge__role {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  background: var(--action-primary-bg);
+  color: var(--action-primary-text);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+}
+
+.user-badge__logout {
+  color: var(--text-secondary);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: color var(--motion-fast) var(--motion-ease);
+}
+
+.user-badge__logout:hover { color: var(--state-danger); }
+
+@media (max-width: 640px) {
+  .header { padding: 0 var(--space-4); }
+  .header__brand-tag { display: none; }
+  .user-badge__email { display: none; }
+}

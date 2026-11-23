@@ -1,0 +1,26 @@
+.wellbeing-dashboard { display: flex; flex-direction: column; gap: var(--space-6); }
+
+.wellbeing-dashboard__hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: linear-gradient(135deg, var(--wellbeing-surface) 0%, var(--surface-card) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--wellbeing-border);
+}
+
+[data-theme='dark'] .wellbeing-dashboard__hero {
+  background: linear-gradient(135deg, var(--wellbeing-surface) 0%, var(--surface-subtle) 100%);
+}
+
+.wellbeing-dashboard__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--wellbeing-accent-strong);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.wellbeing-dashboard__subtitle { color: var(--text-secondary); font-size: var(--font-size-sm); margin-top: var(--space-1); }

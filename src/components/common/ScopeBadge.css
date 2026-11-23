@@ -1,0 +1,23 @@
+.scope-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  background: var(--surface-muted);
+  color: var(--text-brand);
+  white-space: nowrap;
+}
+
+.scope-badge--team { background: var(--color-sky-100); color: #245a75; }
+.scope-badge--office { background: var(--color-sunrise-100); color: #7a4410; }
+.scope-badge--ops { background: #e6e2f7; color: #3d2f78; }
+.scope-badge--region { background: var(--color-meadow-100); color: #1e5540; }
+
+[data-theme='dark'] .scope-badge { background: var(--surface-muted); color: var(--text-brand); }
+[data-theme='dark'] .scope-badge--team { background: rgba(142, 197, 223, 0.15); color: #8ec5df; }
+[data-theme='dark'] .scope-badge--office { background: rgba(249, 178, 52, 0.15); color: #fdde9e; }
+[data-theme='dark'] .scope-badge--ops { background: rgba(164, 233, 197, 0.12); color: #a4e9c5; }
+[data-theme='dark'] .scope-badge--region { background: rgba(110, 213, 161, 0.15); color: #a4e9c5; }
